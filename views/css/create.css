@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+#user_create dd{
+	width: 400px;
+}
+#register_button {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+}
+
+#list_link {
+	color: #fff;
+	position: relative;
+	top: -19px;
+}

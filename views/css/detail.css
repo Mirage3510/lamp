@@ -1,0 +1,24 @@
+@CHARSET "UTF-8";
+
+#button_container,
+#update_form,
+#delete_form {
+	float: left;
+}
+#button_container {
+	margin-top: 5px;
+	clear: both;
+}
+#delete_form {
+	margin-left: 5px;
+}
+.main_nav {
+	float: right;
+	clear: both;
+	position: relative;
+	top: -19px;
+}
+.main_nav a{
+	color: #fff;
+	float: left;
+}

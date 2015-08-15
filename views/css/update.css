@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+#user_update dd{
+	width: 400px;
+}
+#update_button {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+}
+.main_header nav {
+	float: right;
+	clear: both;
+}
+.main_header a{
+	color: #fff;
+	position: relative;
+	top: -19px;
+}

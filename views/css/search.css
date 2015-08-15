@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+#search_button {
+	float: left;
+	clear: both;
+	margin-top: 5px;
+}
+#create {
+	margin-top: 5px;
+}
+#search_result {
+	margin-top: 5px;
+}
+nav#create {
+	float: right;
+	clear: both;
+	position: relative;
+	top: -22px;
+}
+nav#create  a{
+	color: #fff;
+}

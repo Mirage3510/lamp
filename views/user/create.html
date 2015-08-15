@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<title>ユーザー新規作成</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/create.css" />
+	</head>
+	<body>
+		<header class="main_header">
+			<h1 class="header_title">ユーザー管理</h1>
+			<nav class="header_nav">
+				<a id="list_link" href="search.php">[一覧]</a>
+			</nav>
+		</header>
+		<article>
+			<h2 class="sub_title">ユーザー新規作成</h2>
+			<form action="create.php" method="post" accept-charset="UTF-8">
+				<dl id="user_create" class="item_list">
+					<dt>名前（カナ）</dt>
+					<dd>
+						<span>（姓）</span><input type="text" name="last_name_kana" />
+						<span>（名）</span><input type="text" name="first_name_kana" />
+					</dd>
+					<dt class="clear">名前（漢字）</dt>
+					<dd>
+						<span>（姓）</span><input type="text" name="last_name" />
+						<span>（名）</span><input type="text" name="first_name" />
+					</dd>
+					<dt class="clear">住所</dt>
+					<dd>
+						<input type="text" name="address" />
+					</dd>
+					<dt class="clear">電話番号</dt>
+					<dd>
+						<input type="tel" name="tel_number" />
+					</dd>
+					<dt class="clear">性別</dt>
+					<dd>
+						<select name="sex">
+							<option value="0">男</option>
+							<option value="1">女</option>
+							<option value="2">不明</option>
+						</select>
+					</dd>
+					<dt class="clear">生年月日</dt>
+					<dd>
+						<input type="date" name="birth_day" />
+					</dd>
+				</dl>
+				<input type="submit"  id="register_button" class="normal_button" value="登録" />
+			</form>
+		</article>
+	</body>
+</html>
