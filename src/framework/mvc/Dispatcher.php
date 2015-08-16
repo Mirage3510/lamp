@@ -37,11 +37,24 @@ class Dispatcher {
 		//パラメータより取得したコントローラー名によりクラス振り分け
 		$className = ucfirst(strtolower($controller)) . 'Controller';
 
-		//クラスファイル読み込み
+		//コントローラーのクラスファイル読み込み
 		require_once $this->sysRoot . '/controllers/' . $className . '.php';
 
-		//クラスインスタンス生成
+		//コントローラーのクラスインスタンス生成
 		$controllerInstance = new $className();
+
+		//1番目のパラメータをアクションフォームとして取得
+		$formName = ucfirst(strtolower($controller)) . 'Form';
+		//フォームのクラスファイル読込
+		require_once $this->sysRoot . '/form/' . $formName . '.php';
+
+		//フォームのクラスインスタンス生成
+		$formInstance = new $formName();
+
+		//TODO リクエストをフォームのプロパティにセット
+
+		//コントローラーにフォームを設定
+
 
 		//2番目のパラメータをコントローラーとして取得
 		$action= 'index';
@@ -51,6 +64,15 @@ class Dispatcher {
 
 		//アクションメソッドを実行
 		$actionMethod = $action . 'Action';
-		$controllerInstance->$actionMethod();
+		$transitionPath = null;
+		$transitionPath = $controllerInstance->$actionMethod();
+
+		if($transitionPath != null) {
+			//画面遷移パスの先頭の/は削除
+			$transitionPath = preg_replace('/^\/?/', '', $transitionPath);
+
+			//画面読み込み
+			require_once $transitionPath;
+		}
 	}
 }
